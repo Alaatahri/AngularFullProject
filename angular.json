@@ -49,11 +49,39 @@
                 "inlineCritical": false
               }
             },
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "10MB",
+                "maximumError": "20MB"
+              },
+              {
+                "type": "anyComponentStyle",
+                "maximumWarning": "1MB",
+                "maximumError": "2MB"
+              }
+            ]
           },
           "configurations": {
             "production": {
               "outputHashing": "all",
-              "budgets": []
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "10MB",
+                  "maximumError": "20MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "1MB",
+                  "maximumError": "2MB"
+                },
+                {
+                  "type": "bundle",
+                  "maximumWarning": "10MB",
+                  "maximumError": "20MB"
+                }
+              ]
             },
             "development": {
               "optimization": false,
