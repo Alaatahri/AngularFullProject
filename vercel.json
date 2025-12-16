@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build -- --configuration production",
+  "buildCommand": "npm run build -- --configuration production --source-map=false",
   "outputDirectory": "dist/fullstackproject",
   "installCommand": "npm install",
   "framework": "angular",
