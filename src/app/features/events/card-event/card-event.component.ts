@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Eventy} from '../../../models/eventy';
+import {Event} from '../../../models/eventy';
 
 @Component({
   selector: 'app-card-event',
@@ -8,11 +8,11 @@ import {Eventy} from '../../../models/eventy';
 })
 export class CardEventComponent {
   searchValue: string;
-  @Input() e:Eventy;
-  @Output() notificationLike:EventEmitter<Eventy>
+  @Input() e:Event;
+  @Output() notificationLike:EventEmitter<Event>
     = new EventEmitter();
-  likeEvent(e:Eventy) {
+  likeEvent(e:Event) {
     this.notificationLike.emit(e);
   }
-  nbrPlaceDecr(e:Eventy) {}
+  nbrPlaceDecr(e:Event) {}
 }

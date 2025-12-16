@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './side-bar.component.css'
 })
 export class SideBarComponent {
-
+  search(): void {
+    // Filter logic can be implemented here
+    console.log('Search triggered');
+  }
 }

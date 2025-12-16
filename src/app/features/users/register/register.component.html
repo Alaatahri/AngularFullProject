@@ -1,34 +1,69 @@
-<div>
-  <form [formGroup]="formRegister" (ngSubmit)="save()">
-    <div class="form-group">
-      <label>first Name</label>
-      <input type="text" name="fName" class="form-control"
-             formControlName="firstName">
-    </div>
-    <div class="alert alert-danger" *ngIf="formRegister.get('firstName')?.invalid">
-      <div *ngIf="formRegister.get('firstName')?.hasError('required')">
-       this field is required
-      </div>
-      <div *ngIf="formRegister.get('firstName')?.hasError('minlength')">
-        please give a valid name with 3 char
-      </div>
-    </div>
-    <div class="form-group">
-      <label>last Name</label>
-      <input type="text" name="lName" class="form-control"
-             formControlName="lastName">
-    </div>
-    <div class="form-group">
-      <label>email</label>
-      <input type="email" name="email" class="form-control"
-             formControlName="email">
-    </div>
-    <div class="form-group">
-      <label>password</label>
-      <input type="password" name="psw" class="form-control"
-             formControlName="password">
-    </div>
+<div class="container py-5 d-flex justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-lg border-0 rounded-4 register-card">
+      <div class="card-body p-4 p-md-5">
+        <h2 class="mb-3 text-center">Créer un utilisateur</h2>
+        <p class="text-muted text-center mb-4">
+          Formulaire réactif avec validations (exemple pour la partie back‑office du projet full stack).
+        </p>
 
-     <input type="submit" value="save" class="btn btn-primary">
-  </form>
+        <form [formGroup]="formRegister" (ngSubmit)="save()" novalidate>
+          <div class="mb-3">
+            <label class="form-label">Prénom</label>
+            <input
+              type="text"
+              name="fName"
+              class="form-control"
+              [ngClass]="{'is-invalid': formRegister.get('firstName')?.invalid && formRegister.get('firstName')?.touched}"
+              formControlName="firstName"
+            >
+            <div class="invalid-feedback" *ngIf="formRegister.get('firstName')?.invalid">
+              <div *ngIf="formRegister.get('firstName')?.hasError('required')">
+                Ce champ est obligatoire.
+              </div>
+              <div *ngIf="formRegister.get('firstName')?.hasError('minlength')">
+                Veuillez saisir au moins 3 caractères.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Nom</label>
+            <input
+              type="text"
+              name="lName"
+              class="form-control"
+              formControlName="lastName"
+            >
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              formControlName="email"
+            >
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">Mot de passe</label>
+            <input
+              type="password"
+              name="psw"
+              class="form-control"
+              formControlName="password"
+            >
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg" [disabled]="formRegister.invalid">
+              Enregistrer l’utilisateur
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

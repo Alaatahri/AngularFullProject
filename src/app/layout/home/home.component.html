@@ -1,14 +1,14 @@
 <!-- Section Hero -->
 <section class="bg-light py-5 text-center">
   <div class="container">
-    <h1 class="display-5 fw-bold">Bienvenue sur EventHub</h1>
+    <h1 class="display-5 fw-bold">Full Stack Project Dashboard</h1>
     <p class="lead text-muted mt-3">
-      La plateforme pour créer, gérer et participer à vos événements préférés.<br>
-      Réservez vos tickets en ligne et partagez vos retours en toute simplicité.
+      Une application full stack pour gérer des événements, les utilisateurs et les tickets.<br>
+      Parfaite comme projet professionnel à présenter (front, services, formulaires, pipes, directives et plus).
     </p>
     <div class="mt-4">
-      <a routerLink="/events" class="btn btn-primary btn-lg">Découvrir les événements</a>
-      <a routerLink="/users/register" class="btn btn-outline-secondary btn-lg ms-2">Créer un compte</a>
+      <a routerLink="/events" class="btn btn-primary btn-lg">Gérer les événements</a>
+      <a routerLink="/users/register" class="btn btn-outline-secondary btn-lg ms-2">Gérer les utilisateurs</a>
     </div>
   </div>
 </section>
@@ -20,9 +20,11 @@
       <div class="card h-100 shadow-sm">
         <img src="/images/ticket.png" class="card-img-top" alt="Tickets">
         <div class="card-body">
-          <h5 class="card-title">Achetez vos tickets</h5>
-          <p class="card-text">Réservez en quelques clics, rapidement et en toute sécurité.</p>
-          <a href="/tickets" class="btn btn-primary btn-sm">Mes Tickets</a>
+          <h5 class="card-title">Front‑end moderne</h5>
+          <p class="card-text">
+            Angular, routing, composants réutilisables, directives personnalisées et pipes.
+          </p>
+          <a routerLink="/events" class="btn btn-primary btn-sm">Voir la partie front</a>
         </div>
       </div>
     </div>
@@ -31,9 +33,11 @@
       <div class="card h-100 shadow-sm">
         <img src="/images/event.png" class="card-img-top" alt="Événements">
         <div class="card-body">
-          <h5 class="card-title">Organisez vos événements</h5>
-          <p class="card-text">Publiez, gérez et suivez vos ventes facilement grâce à EventHub.</p>
-          <a href="/events" class="btn btn-outline-primary btn-sm">Voir les événements</a>
+          <h5 class="card-title">Back‑end & services</h5>
+          <p class="card-text">
+            Services Angular, modèles typés et communication prête pour une API REST.
+          </p>
+          <a routerLink="/events" class="btn btn-outline-primary btn-sm">Explorer les données</a>
         </div>
       </div>
     </div>
@@ -42,10 +46,42 @@
       <div class="card h-100 shadow-sm">
         <img src="/images/feedback.png" class="card-img-top" alt="Feedback">
         <div class="card-body">
-          <h5 class="card-title">Partagez votre avis</h5>
-          <p class="card-text">Aidez la communauté en donnant vos feedbacks et notes.</p>
-          <a href="/feedback" class="btn btn-outline-secondary btn-sm">Donner un feedback</a>
+          <h5 class="card-title">Utilitaires & bonnes pratiques</h5>
+          <p class="card-text">
+            Formulaires réactifs, validations, pipes personnalisés, directives de survol et mise en page responsive.
+          </p>
+          <a routerLink="/users/register" class="btn btn-outline-secondary btn-sm">Voir les formulaires</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Stats / Utilitaires -->
+<section class="container py-5">
+  <div class="row g-4 text-center">
+    <div class="col-md-3 col-sm-6">
+      <div class="fs-stat-card">
+        <h3>Events</h3>
+        <p>CRUD, filtrage, likes, pipes et directives.</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="fs-stat-card">
+        <h3>Users</h3>
+        <p>Formulaire réactif, validations et messages d’erreur.</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="fs-stat-card">
+        <h3>UI</h3>
+        <p>Design moderne avec Bootstrap, animations et layout propre.</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="fs-stat-card">
+        <h3>Ready</h3>
+        <p>Projet prêt à être présenté comme application full stack.</p>
       </div>
     </div>
   </div>

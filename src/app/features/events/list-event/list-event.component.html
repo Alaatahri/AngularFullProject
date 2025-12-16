@@ -7,13 +7,13 @@
 <button class="btn btn-primary" [routerLink]="['newEvent']">Add Event</button></div>
 
   <!-- Recherche -->
-  <input type="text" [(ngModel)]="searchValue"  class="form-control mb-4" placeholder="Rechercher un événement">
+  <input type="text" [(ngModel)]="searchTerm"  class="form-control mb-4" placeholder="Rechercher un événement">
 
   <div class="row g-3" >
 
     <app-card-event class="col-md-4"
-                    *ngFor="let event of listEvents"
-                    [e]="event" (notificationLike)="nbrLike(event)" >
+                    *ngFor="let event of filteredEvents"
+                    [e]="event" (notificationLike)="like(event)" >
 
     </app-card-event>
 

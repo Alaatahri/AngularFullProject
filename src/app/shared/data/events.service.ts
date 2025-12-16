@@ -1,48 +1,53 @@
 import { Injectable } from '@angular/core';
-import {Eventy} from '../../models/eventy';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Event } from '../../models/eventy';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventsService {
-    private list: Eventy[]=[
-    {
-      id:1,
-      title: 'Angular Trainning',
-      description: 'Angular v18',
-      date: new Date('2025-11-10'),
-      location: 'Tunis',
-      price: 50.23456,
-      organizerId: 10,
-      imageUrl: 'https://th.bing.com/th/id/OIP.58BA6h6N8hyKCe2O9S5NwAHaD4?w=329&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
-      nbPlaces:5,
-      nbrLike: 30,
-    },
-    {
-      id:2,
-      title: 'Symfony Training',
-      description: 'Symfony Training V6',
-      date: new Date('2025-12-10'),
-      location: 'Tunis',
-      price: 50,
-      organizerId: 10,
-      imageUrl: 'https://th.bing.com/th/id/OIP.58BA6h6N8hyKCe2O9S5NwAHaD4?w=329&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
-      nbPlaces:0,
-      nbrLike: 0,
-    }
-  ]
-    constructor() { }
-   public getAllEvents(){
-       //cnx backend
-       return this.list;
+  private urlBackend = 'http://localhost:3000/events/'; // URL de ton backend
+
+  constructor(private http: HttpClient) { }
+
+  // ✅ CREATE - Ajouter un événement
+  addEvent(event: Event): Observable<Event> {
+    return this.http.post<Event>(this.urlBackend, event);
   }
 
-  public getEventById(id:number){
-     //conditions
-      return this.list[id];
+  // ✅ READ - Récupérer tous les événements
+  getAllEvents(): Observable<Event[]> {
+    return this.http.get<Event[]>(this.urlBackend);
   }
 
-  public addEvent(event:Eventy){
-      this.list.push(event);
+  // ✅ READ - Récupérer un événement par ID
+  getEventById(id: number): Observable<Event> {
+    return this.http.get<Event>(this.urlBackend + id);
+  }
+
+  // ✅ UPDATE - Modifier un événement
+  updateEvent(id: number, event: Event): Observable<Event> {
+    return this.http.put<Event>(this.urlBackend + id, event);
+  }
+
+  // ✅ DELETE - Supprimer un événement
+  deleteEvent(id: number): Observable<Event> {
+    return this.http.delete<Event>(this.urlBackend + id);
+  }
+
+  // ✅ RECHERCHE par lieu
+  searchByLocation(location: string): Observable<Event[]> {
+    return this.http.get<Event[]>(this.urlBackend + '?location=' + location);
+  }
+
+  // ✅ LIKE - Ajouter un like
+  likeEvent(id: number): Observable<Event> {
+    return this.http.patch<Event>(this.urlBackend + id, { nbrLike: 1 });
+  }
+
+  // ✅ RÉSERVER - Réserver une place
+  reservePlace(id: number): Observable<Event> {
+    return this.http.patch<Event>(this.urlBackend + id, { nbPlaces: -1 });
   }
 }
