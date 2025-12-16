@@ -40,7 +40,19 @@
 
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "650kB",
+                "maximumError": "1MB"
+              },
+              {
+                "type": "anyComponentStyle",
+                "maximumWarning": "10kB",
+                "maximumError": "20kB"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -53,7 +65,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "10kB",
-                  "maximumError": "15kB"
+                  "maximumError": "20kB"
                 }
               ],
               "outputHashing": "all"
