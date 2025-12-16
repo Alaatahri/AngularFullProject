@@ -49,33 +49,9 @@
                 "inlineCritical": false
               }
             },
-            "budgets": [
-              {
-                "type": "initial",
-                "maximumWarning": "2MB",
-                "maximumError": "5MB"
-              },
-              {
-                "type": "anyComponentStyle",
-                "maximumWarning": "50kB",
-                "maximumError": "100kB"
-              }
-            ]
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2MB",
-                  "maximumError": "5MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "50kB",
-                  "maximumError": "100kB"
-                }
-              ],
               "outputHashing": "all"
             },
             "development": {
