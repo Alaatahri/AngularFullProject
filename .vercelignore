@@ -1,0 +1,8 @@
+# Ignorer les fichiers inutiles pour Vercel
+node_modules/
+.angular/
+dist/
+coverage/
+.vscode/
+*.log
+
