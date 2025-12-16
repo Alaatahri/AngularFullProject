@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build -- --configuration production --source-map=false",
+  "buildCommand": "npm run vercel-build",
   "outputDirectory": "dist/fullstackproject",
   "installCommand": "npm install",
   "framework": "angular",
